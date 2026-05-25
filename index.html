@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tej v3.0 — Immersive digital portfolio of a strategist and systems designer building the next generation of adaptive organizational intelligence.">
+  <title>Tej v3.0 // Strategic Coherence & Systems Design</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Screen overlays for visual depth -->
+  <div class="noise-overlay" id="ui-noise-overlay"></div>
+  <div class="scanlines" id="ui-scanlines"></div>
+  <div class="ambient-glow-tracker" id="ui-glow-tracker"></div>
+
+  <!-- Custom Cinematic Cursor -->
+  <div class="custom-cursor" id="cursor-dot"></div>
+  <div class="custom-cursor-trail" id="cursor-trail"></div>
+
+  <!-- Top Floating Menu / OS Info Bar -->
+  <header>
+    <nav class="navbar" id="main-nav">
+      <div class="nav-brand">
+        <span class="system-dot"></span>
+        Tej v3.0
+      </div>
+      <ul class="nav-links">
+        <li><a href="#manifesto" id="link-manifesto">Manifesto</a></li>
+        <li><a href="#work" id="link-work">Selected Work</a></li>
+        <li><a href="#canvas" id="link-canvas">Systems Canvas</a></li>
+        <li><a href="#about" id="link-about">Transmission</a></li>
+        <li><a href="#signals" id="link-signals">Signals</a></li>
+      </ul>
+      <div class="nav-status">
+        <div class="nav-status-node" id="nav-node-clock">TIME: --:--:--</div>
+        <div class="nav-status-node status-node" id="nav-node-coherence">
+          <span class="pulse-green"></span>
+          COHERENCE: 99.8%
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero-section">
+    <!-- Matrix Particle Grid Canvas -->
+    <div class="hero-matrix-bg">
+      <canvas id="matrix-canvas"></canvas>
+    </div>
+
+    <!-- Ambient Orbital & Glow Elements -->
+    <div class="hero-glow-orb breathing-glow" id="glow-orb-1"></div>
+    <div class="hero-glow-orb breathing-glow" id="glow-orb-2"></div>
+    <div class="orbital-ring ring-inner" id="hero-ring-inner"></div>
+    <div class="orbital-ring ring-outer" id="hero-ring-outer"></div>
+
+    <!-- Floating Translucent UI Fragments (Telemetry Badges) -->
+    <div class="telemetry-badge badge-left parallax-element" data-speed="-0.03" id="badge-sys-status">
+      <span class="badge-dot"></span>
+      SYS_NODE: ACTIVE // SYNC: STABLE
+    </div>
+    <div class="telemetry-badge badge-right parallax-element" data-speed="0.04" id="badge-sys-coherence">
+      COHERENCE: 99.8% // RTT: 12MS
+    </div>
+
+    <!-- Central Holographic Floating Visual -->
+    <div class="hero-hologram-visual parallax-element" data-speed="0.02" id="hero-central-hologram">
+      <div class="hologram-layer layer-back"></div>
+      <div class="hologram-layer layer-middle">
+        <div class="circuit-grid"></div>
+      </div>
+      <div class="hologram-layer layer-front glass-panel">
+        <div class="inner-telemetry">SYS_ALGN: 100%</div>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-meta-tag">
+        Orchestrator // Systems Architect
+      </div>
+      <h1 class="reveal-title">
+        <span class="reveal-word" style="--d: 0.1s">The</span>
+        <span class="reveal-word" style="--d: 0.2s">moment</span>
+        <span class="reveal-word" style="--d: 0.3s">of</span>
+        <span class="reveal-word" style="--d: 0.4s">singularity</span>
+        <br>
+        <span class="reveal-word" style="--d: 0.5s">has</span>
+        <span class="reveal-word" style="--d: 0.6s">arrived.</span>
+        <span class="reveal-word italic" style="--d: 0.8s">Now what?</span>
+      </h1>
+      <p class="hero-subtext">
+        I work at the intersection of strategy, systems, intelligence, and human coordination.
+      </p>
+      
+      <div class="hero-ctas">
+        <a href="#work" class="btn btn-primary" id="btn-enter-system">
+          Enter the System
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <a href="#canvas" class="btn btn-secondary" id="btn-explore-architecture">
+          Explore the Architecture
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-micro-text">
+      Coherence is the new competitive advantage
+    </div>
+  </section>
+
+  <!-- Manifesto Section -->
+  <section id="manifesto" class="reveal-on-scroll">
+    <div class="section-label">
+      01 // Core Philosophy
+      <span class="line"></span>
+    </div>
+    
+    <div class="manifesto-grid">
+      <div class="manifesto-title">
+        <h2>We outline the parameters <br>of systemic evolution.</h2>
+      </div>
+      
+      <div class="manifesto-content">
+        <div class="manifesto-item">
+          <span class="manifesto-num">AXIOM 001</span>
+          <div class="manifesto-statement">“Intelligence without orchestration is entropy.”</div>
+          <div class="manifesto-desc">
+            Raw computational capacity is abundant. Value no longer resides in generation, but in structured alignment, coherence, and target orchestration.
+          </div>
+        </div>
+        
+        <div class="manifesto-item">
+          <span class="manifesto-num">AXIOM 002</span>
+          <div class="manifesto-statement">“The future belongs to adaptive systems.”</div>
+          <div class="manifesto-desc">
+            Rigid corporate systems decay in volatile environments. We architect self-regulating, modular structures that mutate and thrive dynamically.
+          </div>
+        </div>
+        
+        <div class="manifesto-item">
+          <span class="manifesto-num">AXIOM 003</span>
+          <div class="manifesto-statement">“Strategy is becoming a living organism.”</div>
+          <div class="manifesto-desc">
+            No static document survives contact with decentralized intelligence. We build real-time feedback loops where vision and action co-evolve hourly.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Work (Case Studies) -->
+  <section id="work" class="reveal-on-scroll">
+    <div class="section-label">
+      02 // Classified Intelligence Archives
+      <span class="line"></span>
+    </div>
+
+    <div class="work-grid">
+      <!-- Project 01: Jana Small Finance Bank -->
+      <article class="work-card" id="project-jana" data-project-name="Jana Small Finance Bank">
+        <div class="work-image-container">
+          <div class="hover-overlay-text">
+            “Transformation requires coherence.”
+            <div class="overlay-padlock">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              DECRYPT NODE
+            </div>
+          </div>
+          <img src="assets/jana_finance.png" alt="Jana Small Finance Bank transformation visual">
+        </div>
+        <div class="work-details">
+          <div class="work-meta">
+            <span class="active-tag">Strategy Visualization</span>
+            <span>Enterprise Transformation</span>
+            <span>Operational Intelligence</span>
+          </div>
+          <h3>Jana Small Finance Bank</h3>
+          <p class="work-subtitle">Digital Transformation Ecosystem</p>
+          <p class="work-desc">
+            Reimagining operational coherence and enterprise transformation inside a rapidly scaling financial ecosystem. We map flowing data architectures onto dark metallic visual interfaces.
+          </p>
+          <div class="work-stats">
+            <div class="stat-item">
+              <span class="stat-val" data-target="99.2">0.0%</span>
+              <span class="stat-lbl">Operational Coherence</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-val" data-target="0.08">0.00s</span>
+              <span class="stat-lbl">Sync Latency</span>
+            </div>
+          </div>
+          <a href="#" class="btn-arrow" id="btn-view-jana">
+            Access Node
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 02: DOH Strategy Visualization -->
+      <article class="work-card" id="project-doh" data-project-name="DOH Strategy Visualization">
+        <div class="work-image-container">
+          <div class="hover-overlay-text">
+            “Clarity is infrastructure.”
+            <div class="overlay-padlock">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              DECRYPT NODE
+            </div>
+          </div>
+          <img src="assets/doh_strategy.png" alt="DOH Strategy complex map visual">
+        </div>
+        <div class="work-details">
+          <div class="work-meta">
+            <span class="active-tag">Systems Thinking</span>
+            <span>Strategic Visualization</span>
+            <span>Governance Design</span>
+          </div>
+          <h3>DOH Strategy</h3>
+          <p class="work-subtitle">Translating Complexity into Clarity</p>
+          <p class="work-desc">
+            Strategic visualization systems designed to transform large-scale policy and governance complexity into navigable, high-density organizational intelligence maps.
+          </p>
+          <div class="work-stats">
+            <div class="stat-item">
+              <span class="stat-val" data-target="310">0</span>
+              <span class="stat-lbl">Policy Nodes Mapped</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-val" data-target="99.8">0.0%</span>
+              <span class="stat-lbl">Clarity Resolution</span>
+            </div>
+          </div>
+          <a href="#" class="btn-arrow" id="btn-view-doh">
+            Access Node
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 03: AI-Augmented Leadership Playbook -->
+      <article class="work-card" id="project-playbook" data-project-name="AI-Augmented Leadership Playbook">
+        <div class="work-image-container">
+          <div class="hover-overlay-text">
+            “Coherence is the competitive advantage.”
+            <div class="overlay-padlock">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              DECRYPT NODE
+            </div>
+          </div>
+          <img src="assets/leadership_playbook.png" alt="AI-Augmented playbook neural map visual">
+        </div>
+        <div class="work-details">
+          <div class="work-meta">
+            <span class="active-tag">AI Orchestration</span>
+            <span>Future Systems</span>
+            <span>Organizational Intelligence</span>
+          </div>
+          <h3>Leadership Playbook</h3>
+          <p class="work-subtitle">Designing Coordinated Intelligence</p>
+          <p class="work-desc">
+            A future-facing orchestration framework exploring how leaders, systems, and autonomous AI agents collaboratively coordinate and evolve enterprise ecosystems.
+          </p>
+          <div class="work-stats">
+            <div class="stat-item">
+              <span class="stat-val" data-target="12">0</span>
+              <span class="stat-lbl">Agent Swarm Nodes</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-val" data-target="100">A</span>
+              <span class="stat-lbl">Coherence Rating</span>
+            </div>
+          </div>
+          <a href="#" class="btn-arrow" id="btn-view-playbook">
+            Access Node
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Interactive Systems Thinking Canvas -->
+  <section id="canvas" class="canvas-section reveal-on-scroll">
+    <div class="section-label">
+      03 // Dynamic Ecosystem Topology Map
+      <span class="line"></span>
+    </div>
+
+    <div class="canvas-container" id="interactive-canvas-container">
+      <div class="canvas-grid-lines"></div>
+      
+      <!-- Telemetry Dashboard Panel -->
+      <div class="canvas-telemetry" id="canvas-telemetry-panel">
+        <div class="telemetry-title">
+          NODE STATUS PANEL
+          <span class="pulse-dot"></span>
+        </div>
+        <div class="telemetry-row">
+          <span>Active Node:</span>
+          <span class="val" id="active-node-name">SYSTEMS OVERVIEW</span>
+        </div>
+        <div class="telemetry-row">
+          <span>Coherence Index:</span>
+          <span class="val" id="active-node-coherence">0.998</span>
+        </div>
+        <div class="telemetry-row">
+          <span>System Stability:</span>
+          <span class="val" id="active-node-stability">98.4%</span>
+        </div>
+        <div class="telemetry-row">
+          <span>Telemetry Ping:</span>
+          <span class="val" id="active-node-latency">12ms</span>
+        </div>
+        <div class="telemetry-row" style="margin-top: 1rem; border: none;">
+          <span style="color: var(--color-silver-dim); font-size: 0.7rem;" id="active-node-desc">
+            Hover over interactive network nodes to map signal routing and assess system health vectors.
+          </span>
+        </div>
+      </div>
+
+      <!-- HTML5 Canvas Rendering -->
+      <canvas id="systems-canvas"></canvas>
+
+      <div class="canvas-instructions">
+        Interactive OS Module: Click nodes to activate routing.
+      </div>
+    </div>
+  </section>
+
+  <!-- About (Transmission) Section -->
+  <section id="about" class="reveal-on-scroll">
+    <div class="section-label">
+      04 // Future Timeline Transmission
+      <span class="line"></span>
+    </div>
+
+    <div class="about-transmission">
+      <div class="transmission-sidebar">
+        <div class="transmission-stat-block">
+          <h4>ORCHESTRATOR METADATA</h4>
+          <p style="margin-bottom: 0.5rem;"><strong>COORD:</strong> 35.6762° N, 139.6503° E</p>
+          <p style="margin-bottom: 0.5rem;"><strong>ROLE:</strong> Strategic Synthesis Lead</p>
+          <p style="margin-bottom: 0.5rem;"><strong>KEY VECTORS:</strong> AI Agents, Operating Models, Cybernetic Feedback Loops</p>
+          <p><strong>SECURITY LEVEL:</strong> OMNI-CLEARANCE</p>
+        </div>
+        
+        <div class="transmission-stat-block">
+          <h4>OS METRICS</h4>
+          <p style="margin-bottom: 0.5rem;"><strong>STABILIZATION STATE:</strong> COMPLETED</p>
+          <p style="margin-bottom: 0.5rem;"><strong>ENTROPY SHIELD:</strong> 100%</p>
+          <p><strong>NEURAL LOAD:</strong> OPTIMAL</p>
+        </div>
+      </div>
+
+      <div class="transmission-terminal">
+        <div class="terminal-header">
+          <div class="dots">
+            <span class="dot dot-active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <span>TRANSMISSION_DECRYPT_STATUS: SECURE</span>
+        </div>
+        <div class="terminal-body">
+          <div class="transmission-text" id="transmission-text-content">
+            <p>
+              Strategic planning inside modern enterprises has historically been treated like a static document—a set of projections drafted once, reviewed quarterly, and discarded when the real world inevitably shifts.
+            </p>
+            <p>
+              In the age of abundant intelligence, this model leads directly to structural collapse.
+            </p>
+            <p>
+              I architect digital operating models where human vision and autonomous coordination coalesce. By designing self-healing loops, I help institutions transform strategic vision into continuous, living execution.
+            </p>
+            <p>
+              We are not just designing products. We are organizing the next layer of organizational evolution. Let us construct it together.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thought Signals (Essays Archive) -->
+  <section id="signals" class="reveal-on-scroll">
+    <div class="section-label">
+      05 // Strategic Intelligence Archives
+      <span class="line"></span>
+    </div>
+
+    <div class="thought-signals-grid">
+      <table class="signal-table" id="archive-table">
+        <thead>
+          <tr>
+            <th>SIGNAL ID</th>
+            <th>RESEARCH SUMMARY / CONCEPTION</th>
+            <th>CATEGORY</th>
+            <th style="text-align: right;">COHERENT VECTOR DATE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="row-signal-01">
+            <td class="signal-id">[SIG-7712]</td>
+            <td class="signal-title">Decentralized Multi-Agent Coordination Protocols</td>
+            <td class="signal-cat">ORCHESTRATION</td>
+            <td class="signal-date">04.12.2026</td>
+          </tr>
+          <tr id="row-signal-02">
+            <td class="signal-id">[SIG-8924]</td>
+            <td class="signal-title">The Post-AI Enterprise Operating Model</td>
+            <td class="signal-cat">SYSTEMS</td>
+            <td class="signal-date">02.28.2026</td>
+          </tr>
+          <tr id="row-signal-03">
+            <td class="signal-id">[SIG-3310]</td>
+            <td class="signal-title">Designing Against Entropy: Feedback Loop Aesthetics</td>
+            <td class="signal-cat">DESIGN</td>
+            <td class="signal-date">11.15.2025</td>
+          </tr>
+          <tr id="row-signal-04">
+            <td class="signal-id">[SIG-1108]</td>
+            <td class="signal-title">Verifiable Coherence Metrics for Global Teams</td>
+            <td class="signal-cat">STRATEGY</td>
+            <td class="signal-date">09.05.2025</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section reveal-on-scroll">
+    <div class="contact-info">
+      <h2>Build futures <br><span class="crimson">intentionally.</span></h2>
+      <p>
+        Initiate high-coherence coordination. Submit your organizational query parameters to establish a secure feedback connection.
+      </p>
+    </div>
+    
+    <div class="contact-form-container">
+      <form id="secure-transmission-form" action="#" onsubmit="event.preventDefault();">
+        <div class="form-group">
+          <input type="text" id="form-sender-name" required>
+          <label for="form-sender-name">Origin Entity Name</label>
+        </div>
+        <div class="form-group">
+          <input type="email" id="form-sender-email" required>
+          <label for="form-sender-email">Secure Communication Node (Email)</label>
+        </div>
+        <div class="form-group">
+          <textarea id="form-sender-msg" required></textarea>
+          <label for="form-sender-msg">System Query / Parameters Description</label>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" id="btn-submit-transmission" style="border: none; width: 100%; justify-content: center;">
+          Transmit Signal
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+
+        <div class="form-status-bar">
+          <span>PORT: SECURE // CRYPTO_ENABLED</span>
+          <span id="transmission-status-msg">READY FOR INPUT</span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Status Bar Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div>© 2026 TEJ SYSTEMS. All rights reserved.</div>
+        <ul class="footer-nav">
+          <li><a href="#manifesto">Axioms</a></li>
+          <li><a href="#work">Deployments</a></li>
+          <li><a href="#canvas">Topology</a></li>
+        </ul>
+      </div>
+      <div class="footer-right">
+        [SYS_COORD_ACTIVE // STATUS: BALANCED]
+      </div>
+    </div>
+  </footer>
+
+  <!-- Secure Decryption Passcode Modal Overlay -->
+  <div class="secure-modal" id="secure-decrypt-modal">
+    <div class="secure-modal-content">
+      <div class="secure-modal-header">
+        <span>SECURE DECRYPTION PORTAL</span>
+        <button class="close-modal-btn" id="close-decrypt-modal">&times;</button>
+      </div>
+      <div class="secure-modal-body">
+        <p class="modal-instruction">
+          <strong>[RESTRICTED ACCESS TRIGGERED]</strong> You are attempting to access a classified strategic infrastructure archive node: <br><span id="target-project-label" style="color: #fff; font-weight: bold;">--</span>. Enter passcode to establish decrypt sync.
+        </p>
+        <div class="passcode-field-wrapper">
+          <input type="password" id="archive-passcode-input" placeholder="ENTER ACCESS CODE..." autocomplete="off">
+          <div class="passcode-hint">Hint: The key is "COHERENCE"</div>
+        </div>
+        <div class="modal-status-text" id="modal-decrypt-status">CONNECTION: WAITING_FOR_PASSCODE</div>
+        <button class="btn btn-primary" id="btn-decrypt-archive" style="width: 100%; justify-content: center; margin-top: 1.5rem;">
+          Authenticate Handshake
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
