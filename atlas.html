@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Atlas — An immersive thought-page and semantic topology mapping organization coherence, behavioral drift, and decision intelligence.">
+  <title>Tej v3.0 // The Atlas — Strategic Systems Philosophy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="atlas-body">
+
+  <!-- Screen overlays for visual depth -->
+  <div class="noise-overlay" id="ui-noise-overlay"></div>
+  <div class="scanlines" id="ui-scanlines"></div>
+  <div class="ambient-glow-tracker" id="ui-glow-tracker"></div>
+
+  <!-- Custom Cinematic Cursor -->
+  <div class="custom-cursor" id="cursor-dot"></div>
+  <div class="custom-cursor-trail" id="cursor-trail"></div>
+
+  <!-- Top Floating Menu / OS Info Bar -->
+  <header>
+    <nav class="navbar" id="main-nav">
+      <div class="nav-brand" style="cursor: pointer;" onclick="window.location.href='index.html'">
+        <span class="system-dot"></span>
+        Tej v3.0 // Atlas
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#manifesto" id="link-manifesto">Manifesto</a></li>
+        <li><a href="index.html#work" id="link-work">Selected Work</a></li>
+        <li><a href="index.html#canvas" id="link-canvas">Systems Canvas</a></li>
+        <li><a href="index.html#signals" id="link-signals">Writing</a></li>
+      </ul>
+      <div class="nav-status">
+        <div class="nav-status-node" id="nav-node-clock">TIME: --:--:--</div>
+        <div class="nav-status-node status-node" id="nav-node-coherence">
+          <span class="pulse-green"></span>
+          COHERENCE: 99.8%
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- SECTION 1 — ENTRY VIEWPORT -->
+  <section class="entry-viewport" id="atlas-entry">
+    <div class="entry-bg-particles">
+      <!-- Faint decorative background coordinates -->
+      <svg width="100%" height="100%" opacity="0.08" stroke="currentColor">
+        <line x1="0" y1="100" x2="2000" y2="100" stroke-width="0.5" stroke-dasharray="4 8" />
+        <line x1="0" y1="600" x2="2000" y2="600" stroke-width="0.5" stroke-dasharray="4 8" />
+        <line x1="300" y1="0" x2="300" y2="1000" stroke-width="0.5" stroke-dasharray="4 8" />
+        <line x1="1200" y1="0" x2="1200" y2="1000" stroke-width="0.5" stroke-dasharray="4 8" />
+      </svg>
+    </div>
+    
+    <h1 class="entry-statement">
+      Conflict is not failure.<br>
+      It is information.
+    </h1>
+    
+    <a href="#organizational-map" class="entry-invitation" id="btn-enter-atlas">
+      Enter the Atlas
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <polyline points="19 12 12 19 5 12"></polyline>
+      </svg>
+    </a>
+  </section>
+
+  <!-- SECTION 2 — ORGANISATIONAL MAP (3D CONFLICT TAXONOMY) -->
+  <section class="atlas-section reveal-on-scroll" id="organizational-map" style="padding-top: 6rem;">
+    <div class="section-label">
+      01 // Interactive Behavioral Topology Matrix
+      <span class="line"></span>
+    </div>
+    
+    <div style="max-width: 900px; margin-bottom: 2rem;">
+      <h2 class="reveal-title" style="font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.25; margin-bottom: 1rem;">
+        The Taxonomy of Systemic Friction
+      </h2>
+      <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-silver-dim); line-height: 1.7;">
+        Explore the multi-dimensional taxonomy mapping conflicts across scale levels and contextual views. Hover over the active coordinates to trace alignment vectors, and click any active node to deploy structural telemetry definitions directly on the coordinate.
+      </p>
+    </div>
+
+    <!-- Scroll wrapper to safeguard layouts on mobile -->
+    <div class="matrix-scroll-wrapper">
+      
+      <!-- Translucent floating glassmorphic coordinate definition tooltip overlay -->
+      <div class="floating-node-tooltip" id="node-floating-tooltip">
+        <button class="tooltip-close-btn" id="btn-close-tooltip" aria-label="Close tooltip">&times;</button>
+        <div class="tooltip-badge"><span></span> COORD TELEMETRY</div>
+        <h4 class="tooltip-title" id="tooltip-title">Node Title</h4>
+        <p class="tooltip-desc" id="tooltip-desc">Description of coordinates</p>
+        <div class="tooltip-meta">
+          <div class="tooltip-meta-row">
+            <span>COHERENCE LOAD:</span>
+            <span class="val color-glow" id="tooltip-load">98%</span>
+          </div>
+          <div class="tooltip-meta-row">
+            <span>SYSTEM LATENCY:</span>
+            <span class="val" id="tooltip-latency">12ms</span>
+          </div>
+          <div class="tooltip-meta-row">
+            <span>COORDINATE MESH:</span>
+            <span class="val" id="tooltip-mesh">NET_0.0</span>
+          </div>
+        </div>
+      </div>
+
+      <table class="conflict-matrix-table">
+        <thead>
+          <!-- Tier 1 scale columns -->
+          <tr>
+            <th rowspan="2" style="vertical-align: middle;">Conflict Type</th>
+            <th colspan="3" class="scale-header">Individual <span class="sub-hdr">(Between two people)</span></th>
+            <th colspan="3" class="scale-header">Team <span class="sub-hdr">(Within a department/team)</span></th>
+            <th colspan="3" class="scale-header">Interdepartmental <span class="sub-hdr">(Between department)</span></th>
+            <th colspan="3" class="scale-header">Organizational <span class="sub-hdr">(Whole system)</span></th>
+          </tr>
+          <!-- Tier 2 context columns -->
+          <tr>
+            <th>Task</th><th>Project</th><th>Portfolio</th>
+            <th>Task</th><th>Project</th><th>Portfolio</th>
+            <th>Task</th><th>Project</th><th>Portfolio</th>
+            <th>Task</th><th>Project</th><th>Portfolio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Row 1: Priority/Deadline -->
+          <tr class="row-pink">
+            <td class="row-label">Priority/ Deadline Conflict</td>
+            <td class="matrix-node-cell" data-node="priority-ind-task">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td class="matrix-node-cell" data-node="priority-ind-project">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td class="matrix-node-cell" data-node="priority-team-project">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td class="matrix-node-cell" data-node="priority-team-portfolio">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td class="matrix-node-cell" data-node="priority-inter-portfolio">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <!-- Row 2: Resource Allocation -->
+          <tr class="row-blue">
+            <td class="row-label">Resource Allocation Conflict</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="matrix-node-cell" data-node="resource-team-task">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td class="matrix-node-cell" data-node="resource-team-project">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td class="matrix-node-cell" data-node="resource-inter-project">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td class="matrix-node-cell" data-node="resource-inter-portfolio">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td class="matrix-node-cell" data-node="resource-org-portfolio">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+          </tr>
+
+          <!-- Row 3: Unclear Role/Boundary -->
+          <tr class="row-green">
+            <td class="row-label">Unclear Role/ Boundary Conflict</td>
+            <td class="matrix-node-cell" data-node="role-ind-task">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td class="matrix-node-cell" data-node="role-team-task">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td class="matrix-node-cell" data-node="role-team-project">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td class="matrix-node-cell" data-node="role-inter-project">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <!-- Row 4: Communication/Alignment -->
+          <tr class="row-purple">
+            <td class="row-label">Communication/ Alignment Conflict</td>
+            <td class="matrix-node-cell" data-node="comm-ind-task">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td class="matrix-node-cell" data-node="comm-team-task">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td class="matrix-node-cell" data-node="comm-team-project">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td class="matrix-node-cell" data-node="comm-inter-project">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td></td>
+            <td class="matrix-node-cell" data-node="comm-org-task">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td class="matrix-node-cell" data-node="comm-org-project">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td></td>
+          </tr>
+
+          <!-- Row 5: Expectation/Performance -->
+          <tr class="row-yellow">
+            <td class="row-label">Expectation/ Performance Conflict</td>
+            <td class="matrix-node-cell" data-node="exp-ind-task">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td class="matrix-node-cell" data-node="exp-ind-project">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td class="matrix-node-cell" data-node="exp-team-project">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="matrix-node-cell" data-node="exp-org-project">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+            <td class="matrix-node-cell" data-node="exp-org-portfolio">
+              <div class="checked-shield"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Brutalist metrics counters directly matching user's drawing layout -->
+      <div class="matrix-metrics-container">
+        <div class="metric-number-block">
+          <span class="metric-num">5</span>
+          <span class="metric-lbl">Conflict Types</span>
+        </div>
+        <div class="metric-number-block">
+          <span class="metric-num">4</span>
+          <span class="metric-lbl">Scale Levels</span>
+        </div>
+        <div class="metric-number-block">
+          <span class="metric-num">3</span>
+          <span class="metric-lbl">Context Views</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3 — DECLARATIVE DOCTRINES -->
+  <section class="atlas-section reveal-on-scroll" id="doctrinal-axioms">
+    <div class="section-label">
+      02 // Deep Declarative Doctrines
+      <span class="line"></span>
+    </div>
+    
+    <div class="doctrines-container">
+      <div class="doctrine-block reveal-on-scroll" id="doctrine-1">
+        <span class="doctrine-num">DOCTRINE_001 // ENTROPIC SHIFT</span>
+        <h2 class="doctrine-text">Drift precedes collapse.</h2>
+        <p class="doctrine-sub">
+          Organizations rarely fail in single explosive moments. They decay through the silent, invisible accumulation of minor misalignments. By the time drift manifests in metrics, structural failure is already complete.
+        </p>
+      </div>
+
+      <div class="doctrine-block reveal-on-scroll" id="doctrine-2">
+        <span class="doctrine-num">DOCTRINE_002 // CULTURAL INFRASTRUCTURE</span>
+        <h2 class="doctrine-text">Behaviour is infrastructural.</h2>
+        <p class="doctrine-sub">
+          We treat servers, databases, and physical offices as infrastructure, yet treat human behavior as a soft aesthetic. This is an architectural error. Human trust and response latency are as material as server bandwith.
+        </p>
+      </div>
+
+      <div class="doctrine-block reveal-on-scroll" id="doctrine-3">
+        <span class="doctrine-num">DOCTRINE_003 // INTEGRATED DISSENT</span>
+        <h2 class="doctrine-text">Alignment without tension is theatre.</h2>
+        <p class="doctrine-sub">
+          Institutions that demand forced compliance produce low-frequency static. True strategic alignment is a dynamic balance of counter-pressures. If your team has no visible tension, your alignment is a performance.
+        </p>
+      </div>
+
+      <div class="doctrine-block reveal-on-scroll" id="doctrine-4">
+        <span class="doctrine-num">DOCTRINE_004 // COGNITIVE SCARCITY</span>
+        <h2 class="doctrine-text">Shared reality is the scarcest resource.</h2>
+        <p class="doctrine-sub">
+          In an era of abundant information and localized algorithms, the cost of establishing a baseline of shared facts has scaled exponentially. Coherence is the ultimate strategic competitive advantage.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 — SYSTEM VISUALIZATIONS -->
+  <section class="atlas-section reveal-on-scroll" id="tradeoff-visualizations">
+    <div class="section-label">
+      03 // Dynamic System Tradeoff Engine
+      <span class="line"></span>
+    </div>
+
+    <div style="max-width: 900px; margin-bottom: 3rem;">
+      <h2 style="font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.25; margin-bottom: 1rem;">
+        Divergence Math & Coherence Decay Loops
+      </h2>
+      <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-silver-dim); line-height: 1.7;">
+        Adjust the organizational stress vectors below to simulate intent vs. execution divergence. Watch the mathematical decay curve recalculate the coherence decay envelope in real time.
+      </p>
+    </div>
+
+    <div class="vis-wrapper">
+      <!-- Left: Sliders Panel -->
+      <div class="vis-dashboard">
+        <h4><span></span> PARAMETER MODULATOR</h4>
+        
+        <div class="vis-control-group">
+          <div class="vis-control-label">
+            <span>INTENT DIVERGENCE (θ)</span>
+            <span class="val" id="val-intent">30°</span>
+          </div>
+          <input type="range" class="vis-slider" id="slider-intent" min="0" max="90" value="30">
+        </div>
+
+        <div class="vis-control-group">
+          <div class="vis-control-label">
+            <span>EXECUTION LATENCY (λ)</span>
+            <span class="val" id="val-latency-input">25ms</span>
+          </div>
+          <input type="range" class="vis-slider" id="slider-latency" min="10" max="100" value="25">
+        </div>
+
+        <div class="vis-control-group">
+          <div class="vis-control-label">
+            <span>COMMUNICATION ENTROPY (η)</span>
+            <span class="val" id="val-entropy">0.20</span>
+          </div>
+          <input type="range" class="vis-slider" id="slider-entropy" min="10" max="90" value="20" step="1">
+        </div>
+
+        <div class="vis-stats-output">
+          <div class="row">
+            <span>COHERENCE ENVELOPE (Ω):</span>
+            <span class="val" id="out-coherence" style="color: var(--color-blue-glow); font-weight: bold;">0.92</span>
+          </div>
+          <div class="row">
+            <span>REWORK INDEX (Ψ):</span>
+            <span class="val" id="out-rework" style="color: var(--color-crimson-glow); font-weight: bold;">1.18</span>
+          </div>
+          <div class="row">
+            <span>DECISION VELOCITY:</span>
+            <span class="val" id="out-velocity">88%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Live Math Graph Display -->
+      <div class="vis-display">
+        <div class="vis-display-grid"></div>
+        <svg id="dynamic-decay-graph" viewBox="0 0 400 300">
+          <!-- Coordinates axis -->
+          <line x1="40" y1="260" x2="360" y2="260" stroke="rgba(255,255,255,0.15)" stroke-width="1.2" />
+          <line x1="40" y1="40" x2="40" y2="260" stroke="rgba(255,255,255,0.15)" stroke-width="1.2" />
+          
+          <!-- Axis labels -->
+          <text x="360" y="275" fill="rgba(255,255,255,0.3)" font-family="monospace" font-size="7" text-anchor="end">TIME (t)</text>
+          <text x="30" y="35" fill="rgba(255,255,255,0.3)" font-family="monospace" font-size="7" transform="rotate(-90 30 35)" text-anchor="end">COHERENCE</text>
+          
+          <!-- Target curve -->
+          <path id="graph-curve" d="M 40 60 Q 200 120 360 260" fill="none" stroke="var(--color-crimson)" stroke-width="2" />
+          
+          <!-- Reference curve -->
+          <path id="graph-ref-curve" d="M 40 60 Q 200 65 360 70" fill="none" stroke="rgba(59, 130, 246, 0.25)" stroke-width="1.2" stroke-dasharray="2 3" />
+          
+          <!-- Moving Coordinate Pulse Tracker -->
+          <circle id="graph-tracker-dot" cx="200" cy="120" r="5" fill="#0d0f11" stroke="var(--color-crimson-glow)" stroke-width="2" />
+          <circle id="graph-tracker-pulse" cx="200" cy="120" r="12" fill="none" stroke="var(--color-crimson-glow)" stroke-width="1" opacity="0.5" />
+
+          <!-- Dynamic Text Equations Overlay -->
+          <text x="55" y="65" fill="rgba(255,255,255,0.22)" font-family="monospace" font-size="8">EQUATION: f(t) = Ω · e^(-η·t)</text>
+          <text x="55" y="80" fill="rgba(220,38,38,0.4)" font-family="monospace" font-size="8" id="svg-math-equation">Ψ = θ · λ = 0.52</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 — FIELD NOTES -->
+  <section class="atlas-section reveal-on-scroll" id="accidental-field-notes">
+    <div class="section-label">
+      04 // Scattered Field Notes
+      <span class="line"></span>
+    </div>
+    
+    <div style="max-width: 900px; margin-bottom: 2rem;">
+      <h2 style="font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.25; margin-bottom: 1rem;">
+        Fragments from the System Floor
+      </h2>
+      <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-silver-dim); line-height: 1.7;">
+        These notes represent observational data gathered during operational interventions inside complex institutions. Uncovered like fragments in a digital soil.
+      </p>
+    </div>
+
+    <div class="notes-gallery">
+      <div class="field-note-card reveal-on-scroll">
+        <div>
+          <span class="note-tag">LOG_ENTRY // COGNITIVE</span>
+          <p class="note-quote">
+            “Most rework is meaning failure. We solve engineering hurdles that were actually just communication drift three weeks prior.”
+          </p>
+        </div>
+        <span class="note-coord">[COORD: 42.109 // REF: DRIFT_DECAY]</span>
+      </div>
+
+      <div class="field-note-card reveal-on-scroll">
+        <div>
+          <span class="note-tag">LOG_ENTRY // INFRASTRUCTURE</span>
+          <p class="note-quote">
+            “Suppressed disagreement becomes organizational latency. Unvoiced conflicts are simply stored in the culture as debt, paying interest in slowed execution.”
+          </p>
+        </div>
+        <span class="note-coord">[COORD: 18.002 // REF: LATENCY_INDEX]</span>
+      </div>
+
+      <div class="field-note-card reveal-on-scroll">
+        <div>
+          <span class="note-tag">LOG_ENTRY // STRATEGY</span>
+          <p class="note-quote">
+            “Teams rarely lack alignment. They lack visible trade-offs. Almost everyone agrees on what is good; they fail because they refuse to decide what to ignore.”
+          </p>
+        </div>
+        <span class="note-coord">[COORD: 88.751 // REF: TRADEOFF_ACCUM]</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6 — OPEN ENDING -->
+  <section class="ending-viewport reveal-on-scroll" id="atlas-ending">
+    <div class="entry-bg-particles">
+      <svg width="100%" height="100%" opacity="0.04" stroke="currentColor">
+        <circle cx="50%" cy="50%" r="200" fill="none" stroke-width="0.5" stroke-dasharray="3 6" />
+        <circle cx="50%" cy="50%" r="400" fill="none" stroke-width="0.5" stroke-dasharray="3 6" />
+      </svg>
+    </div>
+    
+    <h2 class="ending-headline">
+      How do humans remain coherent together inside increasingly intelligent systems?
+    </h2>
+    
+    <a href="https://www.linkedin.com/in/tejthethunder/" target="_blank" rel="noopener noreferrer" class="entry-invitation" style="margin-top: 2rem; opacity: 1; animation: none;">
+      Initiate Connection (LinkedIn)
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="7" y1="17" x2="17" y2="7"></line>
+        <polyline points="7 7 17 7 17 17"></polyline>
+      </svg>
+    </a>
+    
+    <span class="ending-label" style="margin-top: 1.5rem;">// UNRESOLVED STATE_INDEX: ENTR_00</span>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div>© 2026 TEJ SYSTEMS. All rights reserved.</div>
+        <ul class="footer-nav">
+          <li><a href="index.html#manifesto">Axioms</a></li>
+          <li><a href="index.html#work">Deployments</a></li>
+          <li><a href="index.html#canvas">Topology</a></li>
+          <li><a href="https://www.linkedin.com/in/tejthethunder/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="footer-right">
+        [SYS_COORD_ACTIVE // STATUS: BALANCED]
+      </div>
+    </div>
+  </footer>
+
+  <script src="atlas.js"></script>
+</body>
+</html>

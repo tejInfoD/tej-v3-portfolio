@@ -609,16 +609,191 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 9. Provocative Archive Row Triggers
+  // 9. Editorial Signals Reader Mode & Database
   // ==========================================
-  const tableRows = document.querySelectorAll('#archive-table tbody tr');
-  tableRows.forEach(row => {
-    row.addEventListener('click', () => {
-      const signalId = row.querySelector('.signal-id').textContent;
-      const title = row.querySelector('.signal-title').textContent;
-      alert(`[SYSTEM_TELEMETRY]: Accessing secure digital archives for coordinate ${signalId}.\nSignal Vector: "${title}"\nDecryption status: COMPLETED`);
+  const articlesDB = {
+    'SIG-7712': {
+      id: '[SIG-7712]',
+      title: 'Decentralized Multi-Agent Coordination Protocols',
+      category: 'ORCHESTRATION',
+      date: '04.12.2026',
+      time: '7 MIN READ',
+      content: `
+        <p>In the post-singularity enterprise ecosystem, computational capacity has transitioned from a scarce commodity to an ambient infrastructure. Value no longer resides in the generation of intelligence, but in its orchestration.</p>
+        
+        <p>As autonomous AI agents begin operating at sub-millisecond latencies across enterprise processes, traditional human consensus structures are transformed into the primary operational bottleneck. We are witnessing the emergence of "organizational latency"—the delay introduced when decentralized systems are forced to align with slow-moving hierarchical models.</p>
+
+        <blockquote>
+          “The goal is not to eliminate human agency, but to transition humans from active bottleneck controllers to sovereign boundary setters.”
+        </blockquote>
+
+        <h3>The Mechanics of Autonomous Alignment</h3>
+        <p>To operate coherently without central orchestration checkpoints, agent swarms utilize decentralized coordination protocols derived from distributed systems and physics. These structures rely on three fundamental principles:</p>
+        
+        <ul>
+          <li><strong>Mutual Telemetry Broadcast:</strong> Agents continuously broadcast coordinate vectors representing their execution state, local context, and confidence limits.</li>
+          <li><strong>Active Repulsion Fields:</strong> To prevent redundant computation and resource collisions, active nodes maintain a mathematically defined repelling force against overlapping tasks.</li>
+          <li><strong>Dynamic Coherence Envelopes:</strong> The boundaries of a team's execution space are calculated programmatically, allowing agents to shift workloads dynamically as localized stressors scale.</li>
+        </ul>
+
+        <h3>Deploying Behavioral Protocols</h3>
+        <p>Institutions that implement these coordination models experience a profound reduction in rework and communication debt. By designing interfaces that visualize these invisible systems, orchestrators can monitor organizational coherence in real time, transforming conflict from an emotional friction into structured telemetry.</p>
+      `
+    },
+    'SIG-8924': {
+      id: '[SIG-8924]',
+      title: 'The Post-AI Enterprise Operating Model',
+      category: 'SYSTEMS',
+      date: '02.28.2026',
+      time: '9 MIN READ',
+      content: `
+        <p>The legacy corporation was designed to solve coordination challenges through information compression. In traditional structures, raw operational insights are systematically flattened, compressed, and funneled up through management hierarchies to decision nodes. In the era of ambient machine intelligence, this model is obsolete.</p>
+        
+        <p>When intelligence is ubiquitous, compression is no longer a necessity. The modern operating model must be built around information expansion and real-time behavioral loops. Rather than managing teams, we are organizing living ecosystems of coordinated computation and human intent.</p>
+
+        <blockquote>
+          “We are moving from static organizational architecture to self-regulating, living networks that evolve hourly.”
+        </blockquote>
+
+        <h3>The Coherence Decay Loop</h3>
+        <p>Without continuous feedback loops, high-growth institutions undergo a process we define as Coherence Decay. This decay follows a predictable mathematical loop:</p>
+        <ol>
+          <li><strong>Execution Divergence:</strong> Daily actions drift subtly away from the core strategic intent.</li>
+          <li><strong>Evaporation of Meaning:</strong> High-level concepts become performative buzzwords, losing their specific technical parameters.</li>
+          <li><strong>Latency Accumulation:</strong> Decision loops lengthen as managers seek consensus rather than clear tradeoffs.</li>
+          <li><strong>Entropic Collapse:</strong> The organization splinters into competing factions operating on conflicting models of reality.</li>
+        </ol>
+
+        <h3>Building Self-Healing Operating Models</h3>
+        <p>To resist entropic decay, systems designers must implement continuous self-healing feedback vectors. Strategic plans must transition from static quarterly slides into live-updating digital operating engines. By tracking behavioral indicators directly, institutions can maintain systemic coherence, adapting their structures to navigate volatility before collapse begins.</p>
+      `
+    },
+    'SIG-3310': {
+      id: '[SIG-3310]',
+      title: 'Designing Against Entropy: Feedback Loop Aesthetics',
+      category: 'DESIGN',
+      date: '11.15.2025',
+      time: '6 MIN READ',
+      content: `
+        <p>For decades, user interface design has been dominated by a singular, transaction-oriented paradigm: minimize friction, maximize velocity, and drive the user toward conversion. While highly effective for simple transactions, this philosophy fails catastrophically when applied to complex decision systems.</p>
+        
+        <p>When users navigate high-consequence ecosystems—such as global supply networks, sovereign policy frameworks, or complex organization topologies—speed is often the enemy of coherence. When interfaces hide systemic tradeoffs to make an action feel effortless, they invite long-term operational debt.</p>
+
+        <blockquote>
+          “Brutalist editorial design is not a retro aesthetic choice; it is an active cognitive strategy to slow down perception and encourage deep systems thinking.”
+        </blockquote>
+
+        <h3>The Principle of Reflective Friction</h3>
+        <p>To help users make intelligent, high-coherence choices, we design interfaces that integrate intentional "reflective friction." This is achieved through carefully calibrated aesthetic decisions:</p>
+        
+        <ul>
+          <li><strong>Generous Whitespace:</strong> Allows information to breathe, reducing cognitive overload and letting the hierarchy carry weight.</li>
+          <li><strong>Dot-Matrix Grid Systems:</strong> Simulates precision, framing data points as coordinate networks rather than isolated statistics.</li>
+          <li><strong>High-Contrast Typography:</strong> Employs sharp serifs alongside precise monospaced details, signaling that words carry mathematical gravity.</li>
+          <li><strong>Dynamic Visual Math Loops:</strong> Embeds live vector curves that transform shapes as values are modified, illustrating how adjusting one lever cascades throughout the ecosystem.</li>
+        </ul>
+
+        <p>By treating feedback loop design as a structural discipline, we help users navigate complex worldviews, transforming digital spaces from transactional paths into scientific observatories.</p>
+      `
+    },
+    'SIG-1108': {
+      id: '[SIG-1108]',
+      title: 'Verifiable Coherence Metrics for Global Teams',
+      category: 'STRATEGY',
+      date: '09.05.2025',
+      time: '8 MIN READ',
+      content: `
+        <p>How do you measure team alignment? Traditionally, organizations rely on subjective telemetry—annual engagement surveys, retrospective performance reviews, and subjective alignment feedback. These mechanisms do not measure alignment; they capture post-hoc narrative rationalizations.</p>
+        
+        <p>True strategic coherence is not an attitude; it is a measurable state of coordination. We propose a new mathematical framework for assessing team health based on objective behavioral data.</p>
+
+        <blockquote>
+          "Teams rarely suffer from a lack of alignment. They suffer from invisible trade-offs that have never been mapped."
+        </blockquote>
+
+        <h3>Three Key Telemetry Vectors</h3>
+        <p>To assess an organization's real-time coherence, strategic designers track three core vectors:</p>
+        <ol>
+          <li><strong>Alignment Drift Angle (θ):</strong> The mathematical angular variance between strategic intent vectors and actual day-to-day execution output.</li>
+          <li><strong>Response Latency (λ):</strong> The time delay between a critical signal appearing in the market environment and the organization executing an adjusted response.</li>
+          <li><strong>Psychological Safety Margin (S):</strong> The frequency of dissenting opinions or critical telemetry reported by edge nodes, relative to standard performance communications.</li>
+        </ol>
+
+        <p>By mapping these parameters into a live-updating dashboard interface, leadership swarms can verify their operational coherence, transforming strategic alignment from a performative theater into a verifiable, high-precision science.</p>
+      `
+    }
+  };
+
+  // Select reader nodes
+  const readerOverlay = document.getElementById('blog-reader-overlay');
+  const btnCloseReader = document.getElementById('btn-close-reader');
+  const scrollContainer = document.getElementById('reader-scroll-container');
+  const progressFill = document.getElementById('reader-progress-indicator');
+  const readerTelemetry = document.getElementById('reader-telemetry');
+
+  const artId = document.getElementById('art-id');
+  const artTitle = document.getElementById('art-title');
+  const artCat = document.getElementById('art-cat');
+  const artDate = document.getElementById('art-date');
+  const artTime = document.getElementById('art-time');
+  const artContent = document.getElementById('art-content');
+
+  // Dynamic row bindings
+  const blogRows = document.querySelectorAll('.blog-row');
+  blogRows.forEach(row => {
+    row.addEventListener('click', (e) => {
+      const articleId = row.getAttribute('data-article-id');
+      if (!articleId) return; // Allow natural navigation for static/external links
+      e.preventDefault();
+      const article = articlesDB[articleId];
+
+      if (article) {
+        artId.textContent = article.id;
+        artTitle.textContent = article.title;
+        artCat.textContent = article.category;
+        artDate.textContent = article.date;
+        artTime.textContent = article.time;
+        artContent.innerHTML = article.content;
+
+        if (scrollContainer) scrollContainer.scrollTop = 0;
+        if (progressFill) progressFill.style.width = '0%';
+        if (readerTelemetry) readerTelemetry.textContent = `PORT: SECURE_READ_${articleId} // STATUS: ACTIVE_STREAM`;
+        if (readerOverlay) readerOverlay.classList.add('active');
+        
+        if (cursorTrail) {
+          cursorTrail.style.transform = 'translate(-50%, -50%) scale(2.2)';
+          setTimeout(() => {
+            cursorTrail.style.transform = 'translate(-50%, -50%) scale(1)';
+          }, 300);
+        }
+      }
     });
   });
+
+  if (btnCloseReader) {
+    btnCloseReader.addEventListener('click', () => {
+      if (readerOverlay) readerOverlay.classList.remove('active');
+    });
+  }
+
+  if (readerOverlay) {
+    readerOverlay.addEventListener('click', (e) => {
+      if (e.target === readerOverlay) {
+        readerOverlay.classList.remove('active');
+      }
+    });
+  }
+
+  if (scrollContainer && progressFill) {
+    scrollContainer.addEventListener('scroll', () => {
+      const scrollTop = scrollContainer.scrollTop;
+      const scrollHeight = scrollContainer.scrollHeight - scrollContainer.clientHeight;
+      if (scrollHeight > 0) {
+        const percent = (scrollTop / scrollHeight) * 100;
+        progressFill.style.width = `${percent}%`;
+      }
+    });
+  }
 
   // ==========================================
   // 10. Secure Archive Decryption Modal Validation
