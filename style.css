@@ -1301,6 +1301,49 @@ footer {
   font-family: var(--font-mono);
 }
 
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-icon-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--color-dark-border);
+  background: rgba(255, 255, 255, 0.015);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-silver-dim);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.social-icon-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icon-btn:hover {
+  color: #fff;
+  border-color: var(--color-crimson);
+  background: rgba(220, 38, 38, 0.04);
+  box-shadow: 0 0 15px rgba(220, 38, 38, 0.2);
+  transform: translateY(-2px);
+}
+
+.social-icon-btn:hover svg {
+  transform: scale(1.15);
+}
+
 /* Mobile & Responsive Adaptations */
 @media (max-width: 1024px) {
   .manifesto-grid,
